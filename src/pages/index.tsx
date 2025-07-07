@@ -1,5 +1,6 @@
 import BubbleBackground from "@/components/Background/BubbleBackground";
-import bubbleTypes from "@/components/types";
+import Navbar from "@/components/Navbar/Navbar";
+import { bubbleTypes } from "@/components/types";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -25,10 +26,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-[#121212]">
-{/* Background */}
-    <BubbleBackground bubbles={bubbles} />
-
+    <div className="w-full h-screen bg-background">
+      {/* Background */}
+      <BubbleBackground bubbles={bubbles} />
+      <Navbar />
+      {/* <div className="relative w-[300px] h-[300px] rounded-full bg-white/05 backdrop-blur-[3px] border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_4px_2px_rgba(255,255,255,0.2)] overflow-hidden">
+        
+      </div> */}
     </div>
   );
 }

@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bubbleGold: "#F6D776", // pastel gold
+        bubbleGold: "#ffc531", // pastel gold
+        background: "#2E1A12"
       },
       keyframes: {
         float: {
