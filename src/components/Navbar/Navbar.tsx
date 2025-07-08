@@ -1,4 +1,4 @@
-import { Copy, FileUser } from "lucide-react";
+import { Copy, FileUser, Menu } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { navItemsTypes } from "../types";
@@ -59,6 +59,10 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#DCC7A1] scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]"></span>
           </Link>
         ))}
+      </div>
+
+      <div className="flex md:hidden">
+      <Menu />
       </div>
     </div>
   );
