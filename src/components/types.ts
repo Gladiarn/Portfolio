@@ -1,4 +1,4 @@
-export interface bubbleTypes {
+export default interface bubbleTypes {
     id: number
     size: number,
     left: string,
@@ -6,7 +6,6 @@ export interface bubbleTypes {
     duration: string,
     delay: string,
 }
-
 export interface navItemsTypes {
     title: string,
     href: string,
