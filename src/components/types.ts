@@ -1,3 +1,5 @@
+import { ReactElement } from "react"
+
 export default interface bubbleTypes {
     id: number
     size: number,
@@ -9,4 +11,11 @@ export default interface bubbleTypes {
 export interface navItemsTypes {
     title: string,
     href: string,
+}
+
+export interface cardInfosTypes {
+    title: string,
+    body:string,
+    background:string
+    icon: ReactElement
 }

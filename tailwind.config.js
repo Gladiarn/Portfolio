@@ -16,7 +16,7 @@ module.exports = {
         secondary: '#B0B0B0',
         border: '#444444',
         accent: '#A855F7',
-        card: "#"
+        card: '#1C1C1C'
       },
       keyframes: {
         float: {

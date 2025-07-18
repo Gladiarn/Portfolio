@@ -9,7 +9,7 @@ export default function Navbar() {
       href: "#",
     },
     {
-      title: "About",
+      title: "Experience",
       href: "#",
     },
     {

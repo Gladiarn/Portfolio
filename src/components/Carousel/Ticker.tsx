@@ -1,9 +1,21 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
-import ReactIcon from "@/icons/react.svg";
 export default function Ticker() {
   const initialIcons = [
+    "html5.svg",
+    "tailwindcss.svg",
+    "javascript.svg",
+    "typescript.svg",
+    "react.svg",
+    "nextdotjs.svg",
+    "express.svg",
+    "figma.svg",
+    "github.svg",
+    "gitlab.svg",
+    "mongodb.svg",
+    "nodedotjs.svg",
+    "python.svg",
     "html5.svg",
     "tailwindcss.svg",
     "javascript.svg",
@@ -22,9 +34,10 @@ export default function Ticker() {
   const [icons, setIcons] = useState(initialIcons);
   const containerRef = useRef<HTMLDivElement>(null);
   const motionRef = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState<boolean>(false);
 
   const x = useMotionValue(0);
-  const speed = 1.5;
+  const speed = hovered? 0 : .3;
   const skipNextFrameRef = useRef(false);
 
   useAnimationFrame(() => {
@@ -45,7 +58,7 @@ export default function Ticker() {
     const containerRect = container.getBoundingClientRect();
 
     if (firstRect.right < containerRect.left) {
-      const offset = firstChild.offsetWidth + 48;
+      const offset = firstChild.offsetWidth + 80;
 
       setIcons((prev) => {
         const updated = [...prev];
@@ -62,14 +75,10 @@ export default function Ticker() {
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full overflow-hidden h-20 relative"
-    >
-        <ReactIcon className="w-8 h-8 text-[#EEEEEE]" />
+    <div ref={containerRef} className="w-full overflow-hidden h-20 relative flex items-center">
       <motion.div
         ref={motionRef}
-        className="flex gap-12 w-max will-change-transform"
+        className="flex gap-20 w-max will-change-transform"
         style={{ x }}
       >
         {icons.map((icon, index) => (
@@ -77,9 +86,11 @@ export default function Ticker() {
             key={index}
             src={icon}
             alt={`Icon-${index}`}
-            width={64}
-            height={64}
-            className="object-contain fill-[#EEEEEE]"
+            width={52}
+            height={52}
+            className="object-contain fill-[#EEEEEE] cursor-pointer transition-transform duration-300 hover:scale-125"
+            onMouseEnter={()=>{setHovered(true)}}
+            onMouseLeave={()=>{setHovered(false)}}
           />
         ))}
       </motion.div>
