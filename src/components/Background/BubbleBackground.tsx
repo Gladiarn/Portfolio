@@ -7,7 +7,7 @@ export default function BubbleBackground({
   bubbles: bubbleTypes[];
 }) {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{zIndex: -1}}>
       {bubbles.map((bubble) => (
         <div
           key={bubble.id}

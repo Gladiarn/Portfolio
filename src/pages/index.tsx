@@ -1,8 +1,13 @@
+import About from "@/components/About/About";
 import BubbleBackground from "@/components/Background/BubbleBackground";
+import Carousel from "@/components/Carousel/Carousel";
+import HeroSection from "@/components/Hero/HeroSection";
+import Navbar from "@/components/Navbar/Navbar";
 import bubbleTypes from "@/components/types";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+
   const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
 
   useEffect(() => {
@@ -20,15 +25,16 @@ export default function Home() {
       });
 
       setBubbles(list);
-      console.log(list);
     }
   }, []);
 
   return (
-    <div className="w-full h-screen bg-[#121212]">
-{/* Background */}
-    <BubbleBackground bubbles={bubbles} />
-
+    <div className="w-full bg-background relative z-0">
+      <BubbleBackground bubbles={bubbles}/>
+      <Navbar />
+      <HeroSection />
+      <Carousel />
+      <About />
     </div>
   );
 }
