@@ -41,7 +41,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="relative order-0 flex justify-center py-10">
-        <div className="rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-accent shadow-[0_0_20px_#1E90FF] lg:w-[300px] lg:h-[300px]">
+        <div className="rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-accent shadow-[0_0_20px_#f97316] lg:w-[300px] lg:h-[300px]">
           <div className="relative w-[290px] h-[370px]">
             {/* w-[290px] h-[370px] */}
             {/* <Image src={"/2x2.png"} alt="picture" fill /> */}

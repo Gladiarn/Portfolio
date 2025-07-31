@@ -2,6 +2,7 @@ import React from "react";
 import { cardInfosTypes } from "../types";
 import Card from "./Card";
 import { BrainCog, HeartHandshake, Puzzle, Rabbit } from "lucide-react";
+import Link from "next/link";
 
 export default function About() {
   const cardsInfo: cardInfosTypes[] = [
@@ -40,12 +41,34 @@ export default function About() {
   ];
 
   return (
-    <div className="w-full h-[1000px] py-14 flex items-center flex-col gap-16 px-4">
-      <p className="text-[32px] font-bold leading-tight text-accent">About</p>
-      <div className="w-full flex justify-center gap-16 relative">
-        {cardsInfo.map((card, index) => (
-          <Card key={index} card={card} />
-        ))}
+    <div className="w-full py-14 flex items-center flex-col gap-16 px-4">
+      <div className="w-full flex flex-col">
+        <div className="w-full flex justify-center gap-16 relative mt-5 min-h-[190px]">
+          {cardsInfo.map((card, index) => (
+            <Card key={index} card={card} />
+          ))}
+        </div>
+        <div className="w-fill xl:hidden gap-1 justify-center flex">
+          <div className={`rounded-full w-[10px] h-[10px] border`} />
+          <div className={`rounded-full w-[10px] h-[10px] border`} />
+          <div className={`rounded-full w-[10px] h-[10px] border`} />
+          <div className={`rounded-full w-[10px] h-[10px] border`} />
+        </div>
+      </div>
+
+      <div className="max-w-[600px] text-center flex flex-col gap-4">
+        <p className="text-foreground">
+          Aspiring software engineer excited to join a{" "}
+          <b className="text-accent">cross-functional</b> team and contribute to
+          impactful, real-world products.
+        </p>
+
+        <Link
+          href={""}
+          className="text-[20px] text-accent underline underline-offset-4 font-semibold tracking-widest hover:text-foreground transition-all ease-in-out duration-300"
+        >
+          Learn More
+        </Link>
       </div>
     </div>
   );
