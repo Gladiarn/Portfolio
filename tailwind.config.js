@@ -14,9 +14,9 @@ module.exports = {
         foreground: '#E0E0E0',
         background: "#121212",
         secondary: '#B0B0B0',
-        border: '#444444',
-        accent: '#A855F7',
-        card: '#1C1C1C'
+        border: '#555555',
+        accent: '#f97316',
+        card: '#1C1C1C',
       },
       keyframes: {
         float: {

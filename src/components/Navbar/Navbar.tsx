@@ -23,7 +23,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="w-full h-auto py-3 px-4 md:px-[50px] xl:px-[200px] flex items-center text-foreground justify-between">
+    <div className="w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px]">
       <div className="flex gap-3 items-center">
         <p className="sm:text-[15px] text-[13px]">bulilaniannecarl@<b className="text-accent">Gmail</b>.com</p>
         <button className="relative flex justify-center h-[34px] w-[40px] rounded-md font-bold text-[14px] text-foreground border border-foreground sm:hover:w-[60px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group hover:border-accent">

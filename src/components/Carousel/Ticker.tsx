@@ -75,13 +75,16 @@ export default function Ticker() {
   });
 
   return (
-    <div ref={containerRef} className="w-full overflow-hidden h-20 relative flex items-center">
+    <div ref={containerRef} className="w-full overflow-hidden h-20 relative flex items-centers">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-background/100 to-white/0 z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-background/100 to-white/0 z-10" />
       <motion.div
         ref={motionRef}
         className="flex gap-20 w-max will-change-transform"
         style={{ x }}
       >
         {icons.map((icon, index) => (
+          
           <Image
             key={index}
             src={icon}
