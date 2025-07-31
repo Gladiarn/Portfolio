@@ -1,0 +1,76 @@
+import React from "react";
+import { Project } from "../types";
+import ProjectCard from "./ProjectCard";
+
+export default function Projects() {
+  const projects: Project[] = [
+    {
+      title: "TourVan - Cloud-Based Van Tour.",
+      introduction:
+        "A full-stack van tour booking platform with real-time GPS, autocomplete, and seat tracking.",
+      technologies: [
+        "ReactJS",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "SliderJS",
+      ],
+      images: ["Tour-1.PNG", "Tour-2.PNG", "Tour-3.PNG", "Tour-4.PNG"],
+    },
+    {
+      title: "Netflix Clone - Front-End Focused Portfolio",
+      introduction:
+        "A responsive portfolio website styled like Netflix, using Django and custom UI components.",
+      technologies: ["Django", "JavaScript"],
+      images: [
+        "Metflix-1.png",
+        "Metflix-2.png",
+        "Metflix-3.png",
+        "Metflix-4.png",
+      ],
+    },
+    {
+      title: "Inventory Management System (IMS)",
+      introduction:
+        "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
+      technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
+      images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
+    },
+    {
+      title: "Inventory Management System (IMS)",
+      introduction:
+        "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
+      technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
+      images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
+    },
+    {
+      title: "Inventory Management System (IMS)",
+      introduction:
+        "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
+      technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
+      images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
+    },
+  ];
+
+  return (
+<div className="w-full py-5 flex flex-col items-center gap-5 px-4">
+  <p className="text-[25px] text-accent font-bold tracking-widest">
+    Personal Projects
+  </p>
+
+  <div
+    className="grid gap-7 max-w-[1450px] w-fit
+    grid-cols-1 
+    sm:grid-cols-2
+    lg:grid-cols-3
+    mx-auto"
+  >
+    {projects.map((project, index) => (
+      <ProjectCard key={index} project={project} />
+    ))}
+  </div>
+</div>
+
+  );
+}

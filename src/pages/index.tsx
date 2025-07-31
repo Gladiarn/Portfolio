@@ -3,6 +3,8 @@ import BubbleBackground from "@/components/Background/BubbleBackground";
 import Carousel from "@/components/Carousel/Carousel";
 import HeroSection from "@/components/Hero/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
+import Projects from "@/components/Projects/Projects";
+// import Skills from "@/components/Skills/Skills";
 import bubbleTypes from "@/components/types";
 import { useEffect, useState } from "react";
 
@@ -23,7 +25,6 @@ export default function Home() {
         duration: `${2 + Math.random() * 3}s`,
         delay: `${Math.random() * 5}s`,
       });
-
       setBubbles(list);
     }
   }, []);
@@ -35,6 +36,8 @@ export default function Home() {
       <HeroSection />
       <Carousel />
       <About />
+      <Projects />
+      {/* <Skills/> */}
     </div>
   );
 }
