@@ -53,7 +53,22 @@ export default function Projects() {
         "Mongoose",
       ],
       images: ["Dephelp-1.png", "Dephelp-2.png", "Dephelp-3.png"],
-    },
+    },{
+      title: "TourConnect - Cloud-Based Van Tour Booking System",
+      introduction:
+        "A full-stack van tour booking system with real-time GPS tracking, location autocomplete, seat reservation management, and an interactive map for seamless travel coordination.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Tailwind CSS",
+        "Mongoose"
+      ],
+      images: ["TourConnect-1.png", "TourConnect-2.png", "TourConnect-3.png"],
+    }
+    
   ];
 
   return (
@@ -67,7 +82,8 @@ export default function Projects() {
     grid-cols-1 
     sm:grid-cols-2
     lg:grid-cols-3
-    mx-auto"
+    mx-auto justify-items-center"
+    
       >
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
