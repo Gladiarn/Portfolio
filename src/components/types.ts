@@ -27,3 +27,22 @@ export interface Project {
   technologies: string[]
   images: string[]
 }
+
+export interface SkillsTypes {
+  title: string,
+  proficiency: number,
+  total: number,
+  category: string,
+  level: string
+}
+
+export interface ContactInfoTypes {
+  title: string;
+  value: string;
+  icon: ReactElement;
+}
+
+export interface FooterContactInfo {
+  icon: ReactElement;
+  value: string;
+}

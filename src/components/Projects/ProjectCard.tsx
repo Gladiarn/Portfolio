@@ -28,8 +28,12 @@ export default function ProjectCard({ project }: { project: Project }) {
           src={`/${project.images[currentImage]}`}
           alt={``}
           fill
-          className="object-cover object-top"
+          className="object-fit object-top"
         />
+
+        <div className="absolute">
+
+        </div>
         <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 flex gap-1 py-1 justify-center">
           {project.images.map((_, index) => (
             <div
