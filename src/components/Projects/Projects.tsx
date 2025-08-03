@@ -13,6 +13,7 @@ export default function Projects() {
         "NodeJS",
         "Express",
         "MongoDB",
+        "LeafletJS",
         "Mongoose",
         "SliderJS",
       ],
@@ -37,20 +38,7 @@ export default function Projects() {
       technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
       images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
     },
-    {
-      title: "Inventory Management System (IMS)",
-      introduction:
-        "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
-      technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
-      images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
-    },
-    {
-      title: "Inventory Management System (IMS)",
-      introduction:
-        "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
-      technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
-      images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
-    },
+
   ];
 
   return (
