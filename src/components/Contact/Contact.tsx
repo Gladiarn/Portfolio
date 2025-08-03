@@ -1,6 +1,7 @@
 import { Facebook, GithubIcon, Linkedin, Mail, Phone } from "lucide-react";
 import React from "react";
 import { ContactInfoTypes, FooterContactInfo } from "../types";
+import Link from "next/link";
 
 export default function Contact() {
   const contactInformation: ContactInfoTypes[] = [
@@ -18,16 +19,16 @@ export default function Contact() {
 
   const footerContactInformation: FooterContactInfo[] = [
     {
-      icon: <Linkedin className="text-foreground" />,
-      value: "bulilaniannecarl@gmail.com",
+      icon: <Linkedin className="text-foreground group-hover:text-accent" />,
+      value: "https://www.linkedin.com/in/ianne-carl-bulilan-321421349/",
     },
     {
-      icon: <Facebook className="text-foreground" />,
-      value: "+63 918 317 2574",
+      icon: <Facebook className="text-foreground group-hover:text-accent" />,
+      value: "https://www.facebook.com/ianne.carl",
     },
     {
-      icon: <GithubIcon className="text-foreground" />,
-      value: "+63 918 317 2574",
+      icon: <GithubIcon className="text-foreground group-hover:text-accent" />,
+      value: "https://github.com/Gladiarn",
     },
   ];
   return (
@@ -71,12 +72,13 @@ export default function Contact() {
           <p className=" font-medium text-accent tracking-widest">My Socials</p>
           <div className="w-full flex gap-4 justify-center">
             {footerContactInformation.map((footer, index) => (
-              <div
+              <Link
+              href={footer.value}
                 key={index}
-                className="p-2 rounded-full bg-accent inline-block"
+                className="p-2 rounded-full bg-accent inline-block hover:bg-foreground group transition-all ease-in-out duration-200"
               >
                 {footer.icon}
-              </div>
+              </Link>
             ))}
           </div>
         </div>

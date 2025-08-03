@@ -38,27 +38,41 @@ export default function Projects() {
       technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
       images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
     },
-
+    {
+      title: "DepHelp - Depression Assessment Platform",
+      introduction:
+        "A full-stack depression screening and assessment platform with Google authentication, dynamic questionnaire, real-time scoring, and personalized results analysis.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "NextAuth",
+        "Tailwind CSS",
+        "Mongoose",
+      ],
+      images: ["Dephelp-1.png", "Dephelp-2.png", "Dephelp-3.png"],
+    },
   ];
 
   return (
-<div className="w-full py-5 flex flex-col items-center gap-5 px-4">
-  <p className="text-[25px] text-accent font-bold tracking-widest">
-    Personal Projects
-  </p>
+    <div className="w-full py-5 flex flex-col items-center gap-5 px-4">
+      <p className="text-[25px] text-accent font-bold tracking-widest">
+        Personal Projects
+      </p>
 
-  <div
-    className="grid gap-7 max-w-[1450px] w-fit
+      <div
+        className="grid gap-7 max-w-[1450px] w-fit
     grid-cols-1 
     sm:grid-cols-2
     lg:grid-cols-3
     mx-auto"
-  >
-    {projects.map((project, index) => (
-      <ProjectCard key={index} project={project} />
-    ))}
-  </div>
-</div>
-
+      >
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+      </div>
+    </div>
   );
 }
