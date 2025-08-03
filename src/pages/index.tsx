@@ -1,10 +1,11 @@
 import About from "@/components/About/About";
 import BubbleBackground from "@/components/Background/BubbleBackground";
 import Carousel from "@/components/Carousel/Carousel";
+import Contact from "@/components/Contact/Contact";
 import HeroSection from "@/components/Hero/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
-// import Skills from "@/components/Skills/Skills";
+import Skills from "@/components/Skills/Skills";
 import bubbleTypes from "@/components/types";
 import { useEffect, useState } from "react";
 
@@ -37,7 +38,8 @@ export default function Home() {
       <Carousel />
       <About />
       <Projects />
-      {/* <Skills/> */}
+      <Skills/>
+      <Contact/>
     </div>
   );
 }
