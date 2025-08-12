@@ -10,15 +10,15 @@ export default function Navbar() {
     },
     {
       title: "Experience",
-      href: "#",
+      href: "#Experience",
     },
     {
       title: "Skills",
-      href: "#",
+      href: "#Skills",
     },
     {
       title: "Contact",
-      href: "#",
+      href: "#Contact",
     },
   ];
 

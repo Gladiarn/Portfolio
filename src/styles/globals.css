@@ -42,4 +42,7 @@ body {
   padding: 5px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
