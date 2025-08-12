@@ -2,6 +2,8 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 export default function HeroSection() {
+
+
   return (
     <div className=" h-[700px] w-full px-4 md:px-[50px] xl:px-[100px] flex flex-col lg:flex-row justify-center lg:items-center lg:gap-32">
       <div className="text-foreground order-1 text-center w-full lg:text-start lg:w-[600px]">
@@ -35,7 +37,7 @@ export default function HeroSection() {
           <button className="px-4 py-2 rounded-md bg-accent text-foreground font-semibold tracking-wide hover:bg-foreground hover:text-accent transition-all ease-in-out duration-300">
             Hire Me
           </button>
-          <button className="px-4 py-2 rounded-md text-accent border border-accent font-semibold tracking-wide hover:text-foreground hover:border-foreground transition-all ease-in-out duration-300">
+          <button onClick={()=>{window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'})}} className="px-4 py-2 rounded-md text-accent border border-accent font-semibold tracking-wide hover:text-foreground hover:border-foreground transition-all ease-in-out duration-300">
             Contact Me
           </button>
         </div>

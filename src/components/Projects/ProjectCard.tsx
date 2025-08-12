@@ -28,12 +28,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           src={`/${project.images[currentImage]}`}
           alt={``}
           fill
-          className="object-fit object-top"
+          className="object-fit object-top cursor-pointer scale-100 hover:scale-105 transition-all ease-in-out duration-200"
         />
 
-        <div className="absolute">
-
-        </div>
+        <div className="absolute top-2 right-2">test</div>
         <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 flex gap-1 py-1 justify-center">
           {project.images.map((_, index) => (
             <div
