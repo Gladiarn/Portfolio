@@ -6,6 +6,7 @@ export default function Projects() {
   const projects: Project[] = [
     {
       title: "TourVan - Cloud-Based Van Tour.",
+      link: "https://github.com/Gladiarn/TourVan-Front",
       introduction:
         "A full-stack van tour booking platform with real-time GPS, autocomplete, and seat tracking.",
       technologies: [
@@ -21,6 +22,7 @@ export default function Projects() {
     },
     {
       title: "Netflix Clone - Front-End Focused Portfolio",
+      link: "https://github.com/Gladiarn/netflix-clone",
       introduction:
         "A responsive portfolio website styled like Netflix, using Django and custom UI components.",
       technologies: ["Django", "JavaScript"],
@@ -33,6 +35,7 @@ export default function Projects() {
     },
     {
       title: "Inventory Management System (IMS)",
+      link: "https://github.com/Gladiarn/IMS",
       introduction:
         "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
       technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
@@ -40,6 +43,7 @@ export default function Projects() {
     },
     {
       title: "DepHelp - Depression Assessment Platform",
+      link: "https://github.com/Gladiarn/Depression-Scale",
       introduction:
         "A full-stack depression screening and assessment platform with Google authentication, dynamic questionnaire, real-time scoring, and personalized results analysis.",
       technologies: [
@@ -53,8 +57,10 @@ export default function Projects() {
         "Mongoose",
       ],
       images: ["Dephelp-1.png", "Dephelp-2.png", "Dephelp-3.png"],
-    },{
+    },
+    {
       title: "TourConnect - Cloud-Based Van Tour Booking System",
+      link: "https://github.com/Gladiarn/Tour-Connect",
       introduction:
         "A full-stack van tour booking system with real-time GPS tracking, location autocomplete, seat reservation management, and an interactive map for seamless travel coordination.",
       technologies: [
@@ -64,11 +70,10 @@ export default function Projects() {
         "Express",
         "MongoDB",
         "Tailwind CSS",
-        "Mongoose"
+        "Mongoose",
       ],
       images: ["TourConnect-1.png", "TourConnect-2.png", "TourConnect-3.png"],
-    }
-    
+    },
   ];
 
   return (
@@ -83,7 +88,6 @@ export default function Projects() {
     sm:grid-cols-2
     lg:grid-cols-3
     mx-auto justify-items-center"
-    
       >
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Project } from "../types";
+import Link from "next/link";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -24,14 +25,15 @@ export default function ProjectCard({ project }: { project: Project }) {
     2xl:h-[260px] 
     overflow-hidden"
       >
+        <Link href={project.link}>
+        
         <Image
           src={`/${project.images[currentImage]}`}
           alt={``}
           fill
           className="object-fit object-top cursor-pointer scale-100 hover:scale-105 transition-all ease-in-out duration-200"
-        />
+        /></Link>
 
-        <div className="absolute top-2 right-2">test</div>
         <div className="absolute w-full bottom-0 left-1/2 -translate-x-1/2 flex gap-1 py-1 justify-center">
           {project.images.map((_, index) => (
             <div
