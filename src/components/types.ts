@@ -23,6 +23,7 @@ export interface cardInfosTypes {
 
 export interface Project {
   title: string
+  link: string
   introduction: string
   technologies: string[]
   images: string[]

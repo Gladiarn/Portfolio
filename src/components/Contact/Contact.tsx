@@ -32,7 +32,7 @@ export default function Contact() {
     },
   ];
   return (
-    <div className="w-full py-5 flex flex-col items-center gap-5 px-4 bg-card/50 backdrop-blur-sm mt-0 sm:mt-6">
+    <div id="Contact" className="w-full py-5 flex flex-col items-center gap-5 px-4 bg-card/50 backdrop-blur-sm mt-0 sm:mt-6">
       <div className="flex flex-col items-center justify-center max-w-[600px] text-center gap-4">
         <p className="text-[25px] text-accent/60 font-semi-nold tracking-widest">
           Get in <b className="text-accent">Touch</b>

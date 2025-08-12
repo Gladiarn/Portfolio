@@ -159,7 +159,7 @@ export default function Skills() {
   };
 
   return (
-    <div className="w-full py-5 flex flex-col items-center gap-5 px-4 sm:mt-6 mt-0">
+    <div id="Skills" className="w-full py-5 flex flex-col items-center gap-5 px-4 sm:mt-6 mt-0">
       <p className="text-[25px] text-accent font-bold tracking-widest">
         Skills
       </p>

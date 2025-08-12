@@ -3,7 +3,7 @@ import { SkillsTypes } from "../types";
 
 export default function SkillsCard({ skill }: { skill: SkillsTypes }) {
   return (
-    <div className="w-[200px] border border-accent h-[100px] rounded-lg flex flex-col p-2 px-4 justify-around bg-card/40 backdrop-blur-sm">
+    <div className="w-[200px] border border-accent h-[100px] rounded-lg flex flex-col p-2 px-4 justify-around bg-card/40 backdrop-blur-sm hover:shadow-[0_0_20px_#f97316] cursor-pointer">
       <p className="text-foreground">{skill.title}</p>
 
       <div className={`w-full h-[4px] bg-secondary/20 rounded-full`}>
