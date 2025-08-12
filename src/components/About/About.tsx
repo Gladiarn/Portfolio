@@ -41,7 +41,7 @@ export default function About() {
   ];
 
   return (
-    <div className="w-full py-14 flex items-center flex-col gap-16 px-4">
+    <div id="Experience" className="w-full py-14 flex items-center flex-col gap-16 px-4">
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center gap-16 relative mt-5 min-h-[190px]">
           {cardsInfo.map((card, index) => (
