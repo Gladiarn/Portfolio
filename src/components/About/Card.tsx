@@ -1,11 +1,11 @@
 import React from "react";
 import { cardInfosTypes } from "../types";
 
-export default function Card({ card }: { card: cardInfosTypes }) {
+export default function Card({ card, activeCard, index }: { card: cardInfosTypes , activeCard: number, index:number }) {
   return (
     <div
       className={`${
-        card.title === "Agile & Scrum" ? "flex flex-col opacity-100 pointer-events-auto scale-100 transition-all duration-300" : "flex flex-col opacity-0 pointer-events-none scale-95 transition-all duration-300"
+        activeCard == index ? "flex flex-col opacity-100 pointer-events-auto scale-100 transition-all duration-300" : "flex flex-col opacity-0 pointer-events-none scale-95 transition-all duration-300"
       } xl:flex xl:flex-col xl:opacity-100 xl:pointer-events-auto xl:Scale-100 transition-all duration-300 ease-in-out text-center items-center gap-3 max-w-[350px] absolute xl:static bg-card/10 backdrop-blur-sm px-3 py-3 rounded-md shadow-[0_0_20px_#f97316] border-2 border-accent`}
     >
       <div
