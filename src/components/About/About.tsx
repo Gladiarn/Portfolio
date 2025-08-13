@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { cardInfosTypes } from "../types";
 import Card from "./Card";
 import { BrainCog, HeartHandshake, Puzzle, Rabbit } from "lucide-react";
@@ -40,19 +40,35 @@ export default function About() {
     },
   ];
 
+  useEffect(()=>{
+    setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % cardsInfo.length);
+    },5000);
+  },[cardsInfo.length]);
+
+  
+  const [activeCard, setActiveCard] = useState<number>(0);
+
   return (
     <div id="Experience" className="w-full py-14 flex items-center flex-col gap-16 px-4">
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center gap-16 relative mt-5 min-h-[190px]">
           {cardsInfo.map((card, index) => (
-            <Card key={index} card={card} />
+            <Card key={index} card={card} activeCard={activeCard} index={index}/>
           ))}
         </div>
         <div className="w-fill xl:hidden gap-1 justify-center flex">
-          <div className={`rounded-full w-[10px] h-[10px] border`} />
-          <div className={`rounded-full w-[10px] h-[10px] border`} />
-          <div className={`rounded-full w-[10px] h-[10px] border`} />
-          <div className={`rounded-full w-[10px] h-[10px] border`} />
+          {
+            cardsInfo.map((card, index)=>(
+              <button
+                key={Math.random()}
+                className={`w-[10px] h-[10px] rounded-full border-accent transition-all duration-300 ${
+                  activeCard === index ? "bg-accent" : "bg-border"
+                }`}
+                onClick={() => setActiveCard(index)}
+              ></button>
+            ))
+          }
         </div>
       </div>
 
