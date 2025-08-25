@@ -15,7 +15,7 @@ export default function HeroSection() {
           <p>And I&apos;m a</p>
           <span className="text-accent">
             <Typewriter
-              words={["Web Developer", "JavaScript Enthusiast"]}
+              words={["Web Developer", "JavaScript Enthusiast", "Fullstack Developer"]}
               loop={true}
               cursor
               cursorStyle="|"
