@@ -22,7 +22,6 @@ export default function BubbleBackground({
             top: `${bubble.top}`,
             ["--duration" as string]: `${bubble.duration}`,
             ["--delay" as string]: `${bubble.delay}`,
-            boxShadow: "0 0 6px 2px rgba(100, 100, 100, 0.3)",
           }}
         />
       ))}

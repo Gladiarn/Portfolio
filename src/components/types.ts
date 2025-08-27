@@ -47,3 +47,12 @@ export interface FooterContactInfo {
   icon: ReactElement;
   value: string;
 }
+
+export interface ExperienceType {
+  position: string;
+  company: string;
+  dateStarted: string;
+  dateEnded: string;
+  summary: string;
+  contributions: string[];
+};
