@@ -19,15 +19,15 @@ export default function Contact() {
 
   const footerContactInformation: FooterContactInfo[] = [
     {
-      icon: <Linkedin className="text-foreground group-hover:text-accent" />,
+      icon: <Linkedin className="text-white group-hover:text-accent" />,
       value: "https://www.linkedin.com/in/ianne-carl-bulilan-321421349/",
     },
     {
-      icon: <Facebook className="text-foreground group-hover:text-accent" />,
+      icon: <Facebook className="text-white group-hover:text-accent" />,
       value: "https://www.facebook.com/ianne.carl",
     },
     {
-      icon: <GithubIcon className="text-foreground group-hover:text-accent" />,
+      icon: <GithubIcon className="text-white group-hover:text-accent" />,
       value: "https://github.com/Gladiarn",
     },
   ];
@@ -38,7 +38,7 @@ export default function Contact() {
           Get in <b className="text-accent">Touch</b>
         </p>
         <p className="text-[13px] text-secondary">
-          If you&apos;d like to get in touch, please fill out the form below
+          If you&apos;d like to get in touch, please reach out to me
           with your contact information and message, and I&apos;ll get back to
           you as soon as possible.
         </p>
