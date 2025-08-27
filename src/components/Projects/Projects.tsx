@@ -32,7 +32,7 @@ const projects: Project[] = [
     technologies: ["Django", "JavaScript"],
     images: [
       "Metflix-1.png",
-      "Metflix-2.png",
+      "Metflix-2.PNG",
       "Metflix-3.png",
       "Metflix-4.png",
     ],
