@@ -78,6 +78,37 @@ const projects: Project[] = [
     ],
     images: ["TourConnect-1.png", "TourConnect-2.png", "TourConnect-3.png"],
   },
+  {
+    title: "Entertainment & Logic Games Website",
+    link: "https://github.com/Gladiarn/Chess-Game",
+    introduction:
+      "A website featuring fun and logic games like Chess, Rock-Paper-Scissors, and other puzzles, built with React, TypeScript, Tailwind CSS, and React Chessboard for the chess game.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "React Chessboard",
+      "JavaScript",
+    ],
+    images: [
+      "chessGame-1.png",
+      "chessGame-2.png",
+      "chessGame-3.png",
+      "chessGame-4.png",
+    ],
+  },
+  {
+    title: "BookKing - Booking Website Prototype",
+    link: "https://github.com/Gladiarn/Booking-Website",
+    introduction:
+      "A booking website prototype built in React to practice Framer Motion animations, using a mock JSON database for data handling and dynamic UI interactions.",
+    technologies: ["React", "Framer Motion", "JSON Server"],
+    images: [
+      "BookKing-1.png",
+      "BookKing-2.png",
+      "BookKing-3.png",
+    ],
+  },
 ];
 export default function Projects() {
   const [paginated, setPaginated] = useState<Project[]>([]);
@@ -163,7 +194,6 @@ export default function Projects() {
         </div>
 
         <div className="flex justify-center items-center gap-2">
-
           <button
             className="text-accent hover:scale-110 transition-all ease-in-out duration-200 disabled:opacity-40"
             onClick={() =>
