@@ -26,11 +26,26 @@ body {
   padding: 5px;
 }
 
+.children-scroll::-webkit-scrollbar {
+  height: 6px; /* thinner horizontal scrollbar */
+}
+
+.children-scroll::-webkit-scrollbar-thumb {
+  background-color: #f97316;
+  border-radius: 25px;
+  border-left: 2px solid #121212;
+  border-right: 2px solid #121212;
+}
+
+.children-scroll::-webkit-scrollbar-track {
+  background-color: #121212;
+}
+
 @layer base {
 :root {
   --background: 50 33% 98%;      /* soft cream-white instead of pure white */
   --foreground: 0 0% 10%;        /* dark text */
-     --card: 0 0% 90%;         /* cream card (slightly darker than background) */
+  --card: 0 0% 93%;         /* cream card (slightly darker than background) */
   --card-foreground: 0 0% 10%;
   --secondary: 0 0% 40%;         /* medium gray */
   --secondary-foreground: 0 0% 98%;

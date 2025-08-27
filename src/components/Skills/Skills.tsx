@@ -159,7 +159,7 @@ export default function Skills() {
   };
 
   return (
-    <div id="Skills" className="w-full py-5 flex flex-col items-center gap-5 px-4 sm:mt-6 mt-0">
+    <div id="Skills" className="w-full py-8 flex flex-col items-center gap-5 px-4 sm:mt-6 mt-0">
       <p className="text-[25px] text-accent font-bold tracking-widest">
         Skills
       </p>
@@ -179,7 +179,7 @@ export default function Skills() {
           </button>
         ))}
       </div>
-      <div className="max-w-[1000px] w-fit flex flex-wrap gap-5 justify-center">
+      <div className="max-w-[1500px] w-fit flex flex-wrap gap-5 justify-center">
         {filteredSkills.map((skill, index) => (
           <SkillsCard key={index} skill={skill} />
         ))}

@@ -4,7 +4,7 @@ import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 export default function HeroSection() {
   return (
-    <div className=" h-[700px] w-full px-4 md:px-[50px] xl:px-[100px] flex flex-col lg:flex-row justify-center lg:items-center lg:gap-32">
+    <div className=" h-[600px] w-full px-4 md:px-[50px] xl:px-[100px] flex flex-col lg:flex-row justify-center lg:items-center lg:gap-32">
       <div className="text-foreground order-1 text-center w-full lg:text-start lg:w-[600px]">
         <p className="font-medium leading-tight">Hello, I&apos;m</p>
         <p className="text-[32px] font-bold leading-tight">
