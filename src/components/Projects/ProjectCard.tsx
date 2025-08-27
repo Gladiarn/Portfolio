@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Project } from "../types";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -22,12 +28,12 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   // auto play main preview
   useEffect(() => {
-  const timeout = setTimeout(() => {
-    setCurrentImage(prev => (prev + 1) % project.images.length);
-  }, 7000);
+    const timeout = setTimeout(() => {
+      setCurrentImage((prev) => (prev + 1) % project.images.length);
+    }, 7000);
 
-  return () => clearTimeout(timeout); // clears previous timeout
-}, [currentImage, project.images.length]);
+    return () => clearTimeout(timeout); // clears previous timeout
+  }, [currentImage, project.images.length]);
 
   return (
     <div
@@ -81,6 +87,8 @@ export default function ProjectCard({ project }: { project: Project }) {
           closerNone={true}
           className="w-full max-w-[1100px] h-fit p-2 bg-transparent border-none"
         >
+          <DialogTitle className="sr-only">Settings</DialogTitle>
+          <DialogDescription className="sr-only"></DialogDescription>
           <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { cardInfosTypes } from "../types";
 import Card from "./Card";
 import { BrainCog, HeartHandshake, Puzzle, Rabbit } from "lucide-react";
-import Link from "next/link";
 
 export default function About() {
   const cardsInfo: cardInfosTypes[] = [
@@ -50,7 +49,7 @@ export default function About() {
   const [activeCard, setActiveCard] = useState<number>(0);
 
   return (
-    <div id="About" className="w-full py-14 flex items-center flex-col gap-16 px-4">
+    <div id="Experience" className="w-full py-5 flex items-center flex-col gap-16 px-4">
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center gap-16 relative mt-5 min-h-[190px]">
           {cardsInfo.map((card, index) => (
@@ -72,20 +71,6 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-[600px] text-center flex flex-col gap-4">
-        <p className="text-foreground">
-          Aspiring software engineer excited to join a{" "}
-          <b className="text-accent">cross-functional</b> team and contribute to
-          impactful, real-world products.
-        </p>
-
-        <Link
-          href={""}
-          className="text-[20px] text-accent underline underline-offset-4 font-semibold tracking-widest hover:text-foreground transition-all ease-in-out duration-300"
-        >
-          Learn More
-        </Link>
-      </div>
     </div>
   );
 }

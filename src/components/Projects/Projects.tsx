@@ -127,7 +127,7 @@ export default function Projects() {
     handlePagination(1);
   }, []);
   return (
-    <div className="w-full py-5 flex flex-col items-center gap-5 px-4">
+    <div className="w-full py-8 flex flex-col items-center gap-5 px-4">
       <p className="text-[25px] text-accent font-bold tracking-widest">
         Personal Projects
       </p>

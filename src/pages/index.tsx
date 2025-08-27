@@ -2,6 +2,7 @@ import About from "@/components/About/About";
 import BubbleBackground from "@/components/Background/BubbleBackground";
 import Carousel from "@/components/Carousel/Carousel";
 import Contact from "@/components/Contact/Contact";
+import Experience from "@/components/Experience/Experience";
 import HeroSection from "@/components/Hero/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
@@ -58,6 +59,7 @@ export default function Home() {
     <div className="w-full bg-background relative z-0">
       <Head>
         <title>Ianne&apos;s Portfolio</title>
+        
         <link rel="icon" href={"briefcase-business.svg"}></link>
       </Head>
 
@@ -88,6 +90,7 @@ export default function Home() {
       <HeroSection />
       <Carousel />
       <About />
+      <Experience />
       <Projects />
       <Skills />
       <Contact />
