@@ -2,6 +2,7 @@ import { Copy, FileUser, Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { navItemsTypes } from "../types";
+
 export default function Navbar() {
   const NavItems: navItemsTypes[] = [
     {
@@ -9,8 +10,8 @@ export default function Navbar() {
       href: "#",
     },
     {
-      title: "Experience",
-      href: "#Experience",
+      title: "About",
+      href: "#About",
     },
     {
       title: "Skills",
@@ -34,8 +35,10 @@ export default function Navbar() {
       console.error("Failed to copy text: ", error);
     }
   };
+
+
   return (
-    <div className="w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px]">
+    <div className="w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto">
       <div className="flex gap-3 items-center">
         <p className="sm:text-[15px] text-[13px]">
           bulilaniannecarl@<b className="text-accent">Gmail</b>.com
@@ -50,7 +53,11 @@ export default function Navbar() {
           </span>
         </button>
 
-        <a download={true} href="/file/CV.pdf" className="border border-foreground text-foregorund relative flex justify-center h-[34px] w-[40px] rounded-md font-bold text-[14px] sm:hover:w-[120px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group hover:border-accent">
+        <a
+          download={true}
+          href="/file/CV.pdf"
+          className="border border-foreground text-foregorund relative flex justify-center h-[34px] w-[40px] rounded-md font-bold text-[14px] sm:hover:w-[120px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group hover:border-accent"
+        >
           <FileUser className="group-hover:text-accent h-[16px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 sm:group-hover:left-[-10px] transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]" />
           <span className="group-hover:text-accent absolute -right-20 top-1/2 -translate-y-1/2 sm:group-hover:right-1/2 translate-x-1/2 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] whitespace-nowrap">
             Download CV

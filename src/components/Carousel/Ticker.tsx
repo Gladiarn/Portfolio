@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
-export default function Ticker() {
-  const initialIcons = [
+import { useTheme } from "next-themes"; 
+
+const initialIcons = [
     { src: "html5.svg", name: "HTML5" },
     { src: "tailwindcss.svg", name: "Tailwind CSS" },
     { src: "javascript.svg", name: "JavaScript" },
@@ -30,6 +31,45 @@ export default function Ticker() {
     { src: "nodedotjs.svg", name: "Node.js" },
     { src: "python.svg", name: "Python" },
   ];
+
+  const initialIconsLight = [
+    { src: "html5-light.svg", name: "HTML5" },
+    { src: "tailwindcss-light.svg", name: "Tailwind CSS" },
+    { src: "javascript-light.svg", name: "JavaScript" },
+    { src: "typescript-light.svg", name: "TypeScript" },
+    { src: "react-light.svg", name: "React" },
+    { src: "nextdotjs-light.svg", name: "Next.js" },
+    { src: "express-light.svg", name: "Express" },
+    { src: "figma-light.svg", name: "Figma" },
+    { src: "github-light.svg", name: "GitHub" },
+    { src: "gitlab-light.svg", name: "GitLab" },
+    { src: "mongodb-light.svg", name: "MongoDB" },
+    { src: "nodedotjs-light.svg", name: "Node.js" },
+    { src: "python-light.svg", name: "Python" },
+    { src: "html5-light.svg", name: "HTML5" },
+    { src: "tailwindcss-light.svg", name: "Tailwind CSS" },
+    { src: "javascript-light.svg", name: "JavaScript" },
+    { src: "typescript-light.svg", name: "TypeScript" },
+    { src: "react-light.svg", name: "React" },
+    { src: "nextdotjs-light.svg", name: "Next.js" },
+    { src: "express-light.svg", name: "Express" },
+    { src: "figma-light.svg", name: "Figma" },
+    { src: "github-light.svg", name: "GitHub" },
+    { src: "gitlab-light.svg", name: "GitLab" },
+    { src: "mongodb-light.svg", name: "MongoDB" },
+    { src: "nodedotjs-light.svg", name: "Node.js" },
+    { src: "python-light.svg", name: "Python" },
+  ];
+export default function Ticker() {
+
+  const { theme} = useTheme();
+  useEffect(() => {
+    if (theme === "dark") {
+      setIcons(initialIcons);
+    } else {
+      setIcons(initialIconsLight);
+    }
+  }, [theme]);
 
   const [icons, setIcons] = useState(initialIcons);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,7 +145,9 @@ export default function Ticker() {
               }}
             />
 
-            <p className="absolute -bottom-8 text-nowrap opacity-0 peer-hover:opacity-100 transition-opacity ease-in-out duration-200">{icon.name}</p>
+            <p className="absolute -bottom-8 text-nowrap opacity-0 peer-hover:opacity-100 transition-opacity ease-in-out duration-200 text-foreground">
+              {icon.name}
+            </p>
           </div>
         ))}
       </motion.div>

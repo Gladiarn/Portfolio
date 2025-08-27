@@ -7,12 +7,15 @@ import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
 import Skills from "@/components/Skills/Skills";
 import bubbleTypes from "@/components/types";
-import { MoveUp } from "lucide-react";
+import { Moon, MoveUp, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
-
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
   useEffect(() => {
     const total = 200;
     const list = [];
@@ -30,6 +33,10 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(()=>{
+    setMounted(true)
+  },[])
+
   const [showButton, setShowButton] = useState<boolean>(false);
   useEffect(() => {
     function handleScroll() {
@@ -42,16 +49,39 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return ()=>{
-      window.removeEventListener("scroll", handleScroll)
-    } 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <div className="w-full bg-background relative z-0">
-       <button onClick={()=>window.scrollTo({top:0, behavior: "smooth"})} className={`${showButton ? "opacity-100" : "opacity-0 pointer-events-none"}  flex fixed z-20 top-1/2 left-0 -translate-y-1/2 p-2 bg-accent transition-all ease-in-out duration-200 cursor-pointer hover:px-3`}>
-      <MoveUp />
+      <Head>
+        <title>Ianne&apos;s Portfolio</title>
+        <link rel="icon" href={"briefcase-business.svg"}></link>
+      </Head>
+
+      {/* go up button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className={`${
+          showButton ? "opacity-100" : "opacity-0 pointer-events-none"
+        }  flex fixed z-20 bottom-16 left-0 -translate-y-1/2 p-2 bg-accent transition-all ease-in-out duration-200 cursor-pointer hover:px-3`}
+      >
+        <MoveUp />
       </button>
+
+      {/* theme changer */}
+      {
+        mounted && (
+          <button
+            className="fixed right-0 top-20 p-2 bg-accent z-20 transition-all ease-in-out duration-200 cursor-pointer hover:px-3"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            {theme === "light" ? <Sun /> : <Moon />}
+          </button>
+        )
+      }
 
       <BubbleBackground bubbles={bubbles} />
       <Navbar />
