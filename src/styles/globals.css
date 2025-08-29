@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Scrollbar */
@@ -42,28 +42,32 @@ body {
 }
 
 @layer base {
-:root {
-  --background: 50 33% 98%;      /* soft cream-white instead of pure white */
-  --foreground: 0 0% 10%;        /* dark text */
-  --card: 0 0% 93%;         /* cream card (slightly darker than background) */
-  --card-foreground: 0 0% 10%;
-  --secondary: 0 0% 40%;         /* medium gray */
-  --secondary-foreground: 0 0% 98%;
-  --accent: 24 95% 53%;          /* orange accent */
-  --accent-foreground: 0 0% 100%;
-  --border: 0 0% 80%;            /* light gray border */
-}
+  :root {
+    --background: 60, 10%, 96%; /* soft cream-white → #F5F5F5 */
+    --foreground: 0 0% 7%; /* dark text → #121212 */
+
+    --card: 60, 10%, 90%; /* slightly darker than background → #E6E6E6 */
+    --card-foreground: 0 0% 10%; /* same as foreground → #1A1A1A */
+
+    --secondary: 0 0% 45%; /* medium gray → #737373 */
+    --secondary-foreground: 0 0% 30%; /* darker gray for contrast → #4D4D4D */
+
+    --accent: 30, 90%, 50%; /* warmer orange → #FF8C33 */
+    --accent-foreground: 0 0% 100%; /* white → #FFFFFF */
+
+    --border: 60, 10%, 88%; /* slightly darker than card → #E0E0E0 */
+  }
 
   .dark {
-    --background: 0 0% 7%;       /* #121212 */
-    --foreground: 0 0% 93%;      /* #EEEEEE */
-    --card: 0 0% 10%;            /* #1a1a1a */
-    --card-foreground: 210 40% 98%; /* #f8fafc */
-    --secondary: 0 0% 67%;       /* #AAAAAA */
-    --secondary-foreground: 0 0% 7%; /* #121212 */
-    --accent: 24 95% 53%;
-    --accent-foreground: 0 0% 100%;
-    --border: 217 19% 27%;       /* #1f2937 */
+    --background: 0 0% 7%; /* #121212 */
+    --foreground: 60, 10%, 96%; /* #F5F5F5 */
+    --card: 0 0% 10%; /* #1A1A1A */
+    --card-foreground: 210 40% 98%; /* #F8FAFC */
+    --secondary: 0 0% 67%; /* #AAAAAA */
+    --secondary-foreground: 0 0% 80%; /* subtle light gray → #CCCCCC */
+    --accent: 24 95% 50%; /* #FFB733 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 0 0% 14%; /* #1E1E1E */
   }
 
   * {

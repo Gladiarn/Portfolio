@@ -14,10 +14,7 @@ export default function HeroSection() {
           <p>And I&apos;m a</p>
           <span className="text-accent">
             <Typewriter
-              words={[
-                "Web Developer",
-                "JavaScript Enthusiast",
-              ]}
+              words={["Web Developer", "JavaScript Enthusiast"]}
               loop={true}
               cursor
               cursorStyle="|"
@@ -28,13 +25,15 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <p className="text-[14px] text-secondary mt-5">I create seamless web experiences as a Fullstack Developer, working across frontend and backend technologies.
+        <p className="text-[14px] text-secondary mt-5">
+          I create seamless web experiences as a Fullstack Developer, working
+          across frontend and backend technologies.
         </p>
 
         <div className="flex gap-4 pt-5 justify-center lg:justify-start">
           <Link
             href={"https://github.com/gladiarn"}
-            className="px-4 py-2 rounded-md bg-accent text-foreground font-semibold tracking-wide hover:bg-foreground hover:text-accent transition-all ease-in-out duration-300"
+            className="px-4 py-2 rounded-md bg-accent text-foregroundWithAccent font-semibold tracking-wide hover:bg-foreground hover:text-accent transition-all ease-in-out duration-300"
           >
             View Projects
           </Link>
@@ -52,10 +51,21 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="relative order-0 flex justify-center py-10">
-        <div className="rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-accent shadow-[0_0_20px_#f97316] lg:w-[300px] lg:h-[300px]">
-          <div className="relative w-[290px] h-[370px]">
-            {/* w-[290px] h-[370px] */}
-            {/* <Image src={"/2x2.png"} alt="picture" fill /> */}
+        <div
+          className={`rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-border shadow-[0_0_30px_rgba(255,255,255,0.05)]
+ lg:w-[300px] lg:h-[300px]`}
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(var(--card)/0.4) 0%, hsl(var(--card)/0.3) 100%)",
+          }}
+        >
+          <div className="relative w-full h-full">
+            {/* <Image
+              src="/2x2.png"
+              alt="picture"
+              fill
+              className="object-cover rounded-lg"
+            /> */}
           </div>
         </div>
       </div>

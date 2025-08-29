@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        foregroundWithAccent: "#EEEEEE",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -27,12 +28,14 @@ module.exports = {
         },
       },
       keyframes: {
-        float: {
-          "0%": {
-            transform: "translateY(0px)",
+        pulseGlow: {
+          "0%, 100%": {
+            transform: "translate(-40%, -40%) scale(1)",
+            opacity: "0.7",
           },
-          "100%": {
-            transform: "translateY(-10px)",
+          "50%": {
+            transform: "translate(-40%, -40%) scale(1.1)",
+            opacity: "1",
           },
         },
         "accordion-down": {
@@ -53,10 +56,7 @@ module.exports = {
         },
       },
       animation: {
-        float:
-          "float var(--duration) ease-in-out var(--delay) infinite alternate",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        pulseGlow: "pulseGlow 8s ease-in-out infinite",
       },
     },
   },

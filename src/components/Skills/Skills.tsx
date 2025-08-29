@@ -171,7 +171,7 @@ export default function Skills() {
               filterCategory(category);
             }}
             className={`transition-all ease-in-out duration-200 px-[10px] py-[5px] border border-accent text-accent rounded-full ${
-              chosenCategory == category ? "bg-accent text-foreground" : ""
+              chosenCategory == category ? "bg-accent text-foregroundWithAccent" : ""
             }`}
             key={index}
           >
