@@ -1,9 +1,10 @@
 import React from "react";
 import { SkillsTypes } from "../types";
+import GlassCard from "../GlassCard/GlassCard";
 
 export default function SkillsCard({ skill }: { skill: SkillsTypes }) {
   return (
-    <div className="sm:w-[200px] w-[145px] border border-accent h-[100px] rounded-lg flex flex-col p-2  px-3 sm:px-4 justify-around bg-card/40 backdrop-blur-sm hover:shadow-[0_0_20px_#f97316] cursor-pointer">
+    <GlassCard className="sm:w-[200px] w-[145px] h-[100px] flex flex-col p-2 px-3 sm:px-4 justify-around rounded-lg cursor-pointer">
       <p className="text-foreground">{skill.title}</p>
 
       <div className={`w-full h-[4px] bg-secondary/20 rounded-full`}>
@@ -14,6 +15,6 @@ export default function SkillsCard({ skill }: { skill: SkillsTypes }) {
         <p className="text-secondary text-[12px]">{skill.level}</p>
         <p className="text-secondary text-[12px]">{skill.proficiency}%</p>
       </div>
-    </div>
+    </GlassCard>
   );
 }

@@ -9,6 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import GlassCard from "../GlassCard/GlassCard";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -36,9 +37,9 @@ export default function ProjectCard({ project }: { project: Project }) {
   }, [currentImage, project.images.length]);
 
   return (
-    <div
-      className="flex flex-col border border-accent rounded-lg overflow-hidden bg-card/40 backdrop-blur-sm 
-      w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px]"
+    <GlassCard
+      className="flex flex-col w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px] border border-accent overflow-hidden p-3
+      "
     >
       <Dialog>
         <div className="relative overflow-hidden aspect-[16/8] sm:h-[180px] xl:h-[210px] 2xl:h-[260px]">
@@ -56,8 +57,12 @@ export default function ProjectCard({ project }: { project: Project }) {
                       alt=""
                       width={800}
                       height={400}
-                      className="object-cover object-top w-full h-full rounded-t-md"
+                      className="object-cover object-top w-full h-full rounded-md"
                       onClick={() => setDialogImage(currentImage)}
+                      style={{
+                        boxShadow:
+                          "inset 0 1px 2px rgba(255,255,255,0.1), 0 8px 20px rgba(0,0,0,0.05)",
+                      }}
                     />
                   </div>
                 ))}
@@ -143,6 +148,6 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-    </div>
+    </GlassCard>
   );
 }

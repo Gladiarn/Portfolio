@@ -32,15 +32,22 @@ export default function Contact() {
     },
   ];
   return (
-    <div id="Contact" className="w-full py-5 flex flex-col items-center gap-5 px-4 bg-card/50 backdrop-blur-sm mt-0 sm:mt-6">
+    <div
+      id="Contact"
+      className="w-full py-5 flex flex-col items-center gap-5 px-4 bg-card/20 backdrop-blur-lg mt-0 sm:mt-6"
+      style={{
+        boxShadow:
+          "inset 0 -1px 2px rgba(255,255,255,0.1), 0 -8px 20px rgba(0,0,0,0.05)",
+      }}
+    >
       <div className="flex flex-col items-center justify-center max-w-[600px] text-center gap-4">
         <p className="text-[25px] text-accent/60 font-semi-nold tracking-widest">
           Get in <b className="text-accent">Touch</b>
         </p>
         <p className="text-[13px] text-secondary">
-          If you&apos;d like to get in touch, please reach out to me
-          with your contact information and message, and I&apos;ll get back to
-          you as soon as possible.
+          If you&apos;d like to get in touch, please reach out to me with your
+          contact information and message, and I&apos;ll get back to you as soon
+          as possible.
         </p>
       </div>
 
@@ -73,7 +80,7 @@ export default function Contact() {
           <div className="w-full flex gap-4 justify-center">
             {footerContactInformation.map((footer, index) => (
               <Link
-              href={footer.value}
+                href={footer.value}
                 key={index}
                 className="p-2 rounded-full bg-accent inline-block hover:bg-foreground group transition-all ease-in-out duration-200"
               >

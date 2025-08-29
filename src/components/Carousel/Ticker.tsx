@@ -119,8 +119,6 @@ export default function Ticker() {
       ref={containerRef}
       className="w-full overflow-visible h-20 relative flex items-centers"
     >
-      <div className="pointer-events-none absolute left-0 top-0 h-[100px] w-16 bg-gradient-to-r from-background/100 to-white/0 z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 h-[100px] w-16 bg-gradient-to-l from-background/100 to-white/0 z-10" />
       <motion.div
         ref={motionRef}
         className="flex gap-20 w-max will-change-transform "
