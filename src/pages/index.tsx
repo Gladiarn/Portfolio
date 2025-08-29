@@ -7,32 +7,32 @@ import HeroSection from "@/components/Hero/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
 import Skills from "@/components/Skills/Skills";
-import bubbleTypes from "@/components/types";
+// import bubbleTypes from "@/components/types";
 import { Moon, MoveUp, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
+  // const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    const total = 200;
-    const list = [];
+  // useEffect(() => {
+  //   const total = 200;
+  //   const list = [];
 
-    for (let i = 0; i < total; i++) {
-      list.push({
-        id: i,
-        size: Math.floor(Math.random() * 4) + 1,
-        left: `${Math.random() * 100}vw`,
-        top: `${Math.random() * 100}vh`,
-        duration: `${2 + Math.random() * 3}s`,
-        delay: `${Math.random() * 5}s`,
-      });
-      setBubbles(list);
-    }
-  }, []);
+  //   for (let i = 0; i < total; i++) {
+  //     list.push({
+  //       id: i,
+  //       size: Math.floor(Math.random() * 4) + 1,
+  //       left: `${Math.random() * 100}vw`,
+  //       top: `${Math.random() * 100}vh`,
+  //       duration: `${2 + Math.random() * 3}s`,
+  //       delay: `${Math.random() * 5}s`,
+  //     });
+  //     setBubbles(list);
+  //   }
+  // }, []);
 
   useEffect(()=>{
     setMounted(true)
@@ -70,7 +70,7 @@ export default function Home() {
           showButton ? "opacity-100" : "opacity-0 pointer-events-none"
         }  flex fixed z-20 bottom-16 left-0 -translate-y-1/2 p-2 bg-accent transition-all ease-in-out duration-200 cursor-pointer hover:px-3`}
       >
-        <MoveUp />
+        <MoveUp className="text-foregroundWithAccent"/>
       </button>
 
       {/* theme changer */}
@@ -80,12 +80,12 @@ export default function Home() {
             className="fixed right-0 top-20 p-2 bg-accent z-20 transition-all ease-in-out duration-200 cursor-pointer hover:px-3"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            {theme === "light" ? <Sun /> : <Moon />}
+            {theme === "light" ? <Sun className="text-foregroundWithAccent"/> : <Moon className="text-foregroundWithAccent"/>}
           </button>
         )
       }
 
-      <BubbleBackground bubbles={bubbles} />
+      <BubbleBackground />
       <Navbar />
       <HeroSection />
       <Carousel />

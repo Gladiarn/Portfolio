@@ -17,12 +17,12 @@ export const experiences:ExperienceType[] = [
       "Integrated the frontend with backend services using RESTful APIs.",
     ],
   },  {
-    position: "Frontend Intern (Next.js)",
-    company: "Symphonics Co. Ltd.",
-    dateStarted: "February 2025",
-    dateEnded: "May 2025",
+    position: "----------",
+    company: "-------",
+    dateStarted: "------",
+    dateEnded: "-------",
     summary:
-      "Worked as a Frontend Intern focusing on modernizing and developing user interfaces using Next.js.",
+      "------------------------- ------------- ---------------------------------- -------------------------",
     contributions: [
       "Redesigned the company’s legacy system and created new UI designs in Figma.",
       "Implemented Figma designs into responsive Next.js components.",
@@ -31,6 +31,7 @@ export const experiences:ExperienceType[] = [
     ],
   },
 ];
+
 export default function Experience() {
   return (
     <div className='w-full py-8 px-4 xl:px-[170px] flex items-center flex-col gap-3'>

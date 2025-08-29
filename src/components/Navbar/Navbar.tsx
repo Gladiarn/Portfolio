@@ -36,16 +36,21 @@ export default function Navbar() {
     }
   };
 
-
   return (
-    <div className="children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto">
+    <div
+      className="bg-card/20 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-lg fixed z-50"
+      style={{
+        boxShadow:
+          "inset 0 1px 2px rgba(255,255,255,0.1), 0 8px 20px rgba(0,0,0,0.05)",
+      }}
+    >
       <div className="flex gap-3 items-center">
-        <p className="sm:text-[15px] text-[13px]">
+        <i className="sm:text-[15px] text-[13px]">
           bulilaniannecarl@<b className="text-accent">Gmail</b>.com
-        </p>
+        </i>
         <button
           onClick={copyClicked}
-          className="relative flex justify-center h-[34px] w-[40px] rounded-md font-bold text-[14px] text-foreground border border-foreground sm:hover:w-[60px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group hover:border-accent"
+          className="relative flex justify-center h-[34px] w-[40px] rounded-md font-bold text-[14px] text-foreground border border-foreground sm:hover:w-[60px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group hover:border-accent "
         >
           <Copy className="group-hover:text-accent h-[16px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 sm:group-hover:left-[-10px] transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]" />
           <span className="group-hover:text-accent absolute -right-20 top-1/2 -translate-y-1/2 sm:group-hover:right-1/2 translate-x-1/2 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]">
