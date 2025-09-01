@@ -170,7 +170,7 @@ export default function Skills() {
             onClick={() => {
               filterCategory(category);
             }}
-            className={`transition-all ease-in-out duration-200 px-[10px] py-[5px] border border-accent text-accent rounded-full ${
+            className={`transition-all ease-in-out duration-200 px-[10px] py-[5px] border border-accent text-accent rounded-full hover:bg-accent/20 ${
               chosenCategory == category ? "bg-accent text-foregroundWithAccent" : ""
             }`}
             key={index}
