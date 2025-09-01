@@ -33,12 +33,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       setCurrentImage((prev) => (prev + 1) % project.images.length);
     }, 7000);
 
-    return () => clearTimeout(timeout); // clears previous timeout
+    return () => clearTimeout(timeout); // clears previous timeouts
   }, [currentImage, project.images.length]);
 
   return (
     <GlassCard
-      className="flex flex-col w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px] border border-accent overflow-hidden p-3
+      className="flex flex-col w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px] border border-accent overflow-hidden p-[15px]
       "
     >
       <Dialog>

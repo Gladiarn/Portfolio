@@ -54,10 +54,7 @@ export default function HeroSection() {
         <div
           className={`rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-border shadow-[0_0_30px_rgba(255,255,255,0.05)]
  lg:w-[300px] lg:h-[300px]`}
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(var(--card)/0.4) 0%, hsl(var(--card)/0.3) 100%)",
-          }}
+
         >
           <div className="relative w-full h-full">
             {/* <Image
