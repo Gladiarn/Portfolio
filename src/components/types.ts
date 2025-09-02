@@ -27,6 +27,7 @@ export interface Project {
   introduction: string
   technologies: string[]
   images: string[]
+  features: string []
 }
 
 export interface SkillsTypes {
