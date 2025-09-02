@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const NavItems: navItemsTypes[] = [
@@ -65,7 +66,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="bg-background/10 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-sm fixed z-50 ">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring", // spring animation
+        stiffness: 500, // how tight the spring is
+        damping: 20, // how much bounce is reduced
+        delay: 0, // small delay before animating
+      }}
+      className="bg-background/10 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-sm fixed z-50 "
+    >
       <div className="flex gap-3 items-center">
         <i className="sm:text-[15px] text-[13px]">
           bulilaniannecarl@<b className="text-accent">Gmail</b>.com
@@ -176,6 +187,6 @@ export default function Navbar() {
           </SheetContent>
         </Sheet>
       </div>
-    </div>
+    </motion.div>
   );
 }

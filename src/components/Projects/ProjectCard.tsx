@@ -159,8 +159,20 @@ export default function ProjectCard({ project }: { project: Project }) {
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
+                exit={{
+                  height: 0,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.15,
+                    ease: "easeInOut", // smooth fade/slide out
+                  },
+                }}
+                transition={{
+                  type: "spring", // spring animation
+                  stiffness: 500, // how tight the spring is
+                  damping: 20, // how much bounce is reduced
+                  delay: 0, // small delay before animating
+                }}
                  className="text-[14px] text-secondary-foreground ml-3"
               >
 
