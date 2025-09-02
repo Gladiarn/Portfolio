@@ -52,11 +52,11 @@ const skillsContainer: SkillsTypes[] = [
     category: "Frontend",
     level: "Expert",
   },{
-  title: "Fetch API / Axios",
-  proficiency: 80,
+  title: "Component Libraries",
+  proficiency: 75,
   total: 100,
   category: "Frontend",
-  level: "Advanced",
+  level: "Intermediate",
 },
 
   // Backend
@@ -115,9 +115,9 @@ const skillsContainer: SkillsTypes[] = [
     total: 100,
     category: "Backend",
     level: "Intermediate",
-  }, // Backend (Auth & Security)
+  },
   {
-    title: "JWT Authentication",
+    title: "JWT Auth",
     proficiency: 70,
     total: 100,
     category: "Backend",
