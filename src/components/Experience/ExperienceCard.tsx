@@ -48,17 +48,28 @@ export default function ExperienceCard({
           <p className="text-[14px] text-secondary-foreground ml-3">
             {experience.summary}
           </p>
-          
+
           <AnimatePresence>
             {activated && (
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
-                 className="text-[14px] text-secondary-foreground ml-3"
+                exit={{
+                  height: 0,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.15,
+                    ease: "easeInOut", // smooth fade/slide out
+                  },
+                }}
+                transition={{
+                  type: "spring", // spring animation
+                  stiffness: 500, // how tight the spring is
+                  damping: 20, // how much bounce is reduced
+                  delay: 0, // small delay before animating
+                }}
+                className="text-[14px] text-secondary-foreground ml-3"
               >
-
                 <ul className="list-disc space-y-1 pl-5">
                   {experience.contributions.map((contribution, index) => (
                     <li key={index}>{contribution}</li>
