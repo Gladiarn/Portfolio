@@ -35,7 +35,7 @@ export default function HeroSection() {
             href={"https://github.com/gladiarn"}
             className="px-4 py-2 rounded-md bg-accent text-foregroundWithAccent font-semibold tracking-wide hover:bg-foreground hover:text-accent transition-all ease-in-out duration-300"
           >
-            View Projects
+            View GitHub
           </Link>
           <button
             onClick={() => {

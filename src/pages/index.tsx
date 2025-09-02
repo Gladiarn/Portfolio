@@ -1,5 +1,5 @@
 import About from "@/components/About/About";
-import BubbleBackground from "@/components/Background/BubbleBackground";
+import Background from "@/components/Background/Background";
 import Carousel from "@/components/Carousel/Carousel";
 import Contact from "@/components/Contact/Contact";
 import Experience from "@/components/Experience/Experience";
@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   // const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   // useEffect(() => {
   //   const total = 200;
   //   const list = [];
@@ -34,9 +34,9 @@ export default function Home() {
   //   }
   // }, []);
 
-  useEffect(()=>{
-    setMounted(true)
-  },[])
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const [showButton, setShowButton] = useState<boolean>(false);
   useEffect(() => {
@@ -59,40 +59,47 @@ export default function Home() {
     <div className="w-full bg-background relative z-0">
       <Head>
         <title>Ianne&apos;s Portfolio</title>
-        
+
         <link rel="icon" href={"briefcase-business.svg"}></link>
       </Head>
-
       {/* go up button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className={`${
           showButton ? "opacity-100" : "opacity-0 pointer-events-none"
-        }  flex fixed z-20 bottom-16 left-0 -translate-y-1/2 p-2 bg-accent transition-all ease-in-out duration-200 cursor-pointer hover:px-3`}
+        }  flex fixed z-20 bottom-16 left-0 -translate-y-1/2 p-2 bg-accent transition-all ease-in-out duration-200 cursor-pointer hover:px-3 rounded-r-md`}
       >
-        <MoveUp className="text-foregroundWithAccent"/>
+        <MoveUp className="text-foregroundWithAccent" />
       </button>
-
       {/* theme changer */}
-      {
-        mounted && (
-          <button
-            className="fixed right-0 top-20 p-2 bg-accent z-20 transition-all ease-in-out duration-200 cursor-pointer hover:px-3"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            {theme === "light" ? <Sun className="text-foregroundWithAccent"/> : <Moon className="text-foregroundWithAccent"/>}
-          </button>
-        )
-      }
-
-      <BubbleBackground />
+      {mounted && (
+        <button
+          className="fixed right-0 top-20 p-2 bg-accent z-20 transition-all ease-in-out duration-200 cursor-pointer hover:px-3 rounded-l-md"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          {theme === "light" ? (
+            <Sun className="text-foregroundWithAccent" />
+          ) : (
+            <Moon className="text-foregroundWithAccent" />
+          )}
+        </button>
+      )}
+      <Background />
       <Navbar />
-      <HeroSection />
+      <section id="Home">
+        <HeroSection />
+      </section>
       <Carousel />
       <About />
-      <Experience />
-      <Projects />
-      <Skills />
+      <section id="Experience">
+        <Experience />
+      </section>
+      <section id="Projects">
+        <Projects />
+      </section>
+      <section id="Skills">
+        <Skills />
+      </section>
       <Contact />
     </div>
   );

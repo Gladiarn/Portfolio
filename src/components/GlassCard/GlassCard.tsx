@@ -1,12 +1,15 @@
 import React, { useRef, useState } from "react";
 
+type GlassCardProps = React.HTMLAttributes<HTMLDivElement> & {
+  children: React.ReactNode;
+  className?: string;
+};
 export default function GlassCard({
   children,
   className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+  onMouseLeave,
+  ...props
+}: GlassCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [spotlight, setSpotlight] = useState<{ x: number; y: number } | null>(
     null
@@ -21,13 +24,17 @@ export default function GlassCard({
     });
   };
 
-  const handleMouseLeave = () => setSpotlight(null);
+  const mergedOnMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    setSpotlight(null);
+    if (onMouseLeave) onMouseLeave(e);
+  };
 
   return (
     <div
+      {...props}
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseLeave={mergedOnMouseLeave}
       className={`relative
         rounded-2xl
         p-5
@@ -51,12 +58,12 @@ export default function GlassCard({
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-200"
           style={{
-            background: `radial-gradient(300px circle at ${spotlight.x}px ${spotlight.y}px, rgba(255,255,255,0.15), transparent 80%)`,
+            background: `radial-gradient(300px circle at ${spotlight.x}px ${spotlight.y}px, var(--spotlight, rgba(255,255,255,0.15)) 0%, transparent 80%)`,
           }}
         />
       )}
       {/* Content */}
-      
+
       {children}
     </div>
   );

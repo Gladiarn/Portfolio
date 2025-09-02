@@ -20,15 +20,15 @@ export const experiences: ExperienceType[] = [
   {
     position: "----------",
     company: "-------",
-    dateStarted: "------",
-    dateEnded: "-------",
+    dateStarted: "-- / -- / --",
+    dateEnded: "-- / -- / --",
     summary:
       "------------------------- ------------- ---------------------------------- -------------------------",
     contributions: [
-      "Redesigned the company’s legacy system and created new UI designs in Figma.",
-      "Implemented Figma designs into responsive Next.js components.",
-      "Reviewed code and oversaw pull requests to maintain code quality.",
-      "Integrated the frontend with backend services using RESTful APIs.",
+      "-------------------------------- ----------------------------",
+      "----------- -------- -----------------------------",
+      "--------",
+      "----------------------------------",
     ],
   },
 ];
@@ -59,7 +59,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="w-full py-8 px-4 xl:px-[170px] flex items-center flex-col gap-3">
+    <div className="w-full py-16 px-4 xl:px-[170px] flex items-center flex-col gap-3">
       <p className="text-[25px] text-accent font-bold tracking-widest mb-5">
         Experience
       </p>

@@ -23,6 +23,12 @@ const projects: Project[] = [
       "SliderJS",
     ],
     images: ["Tour-1.PNG", "Tour-2.PNG", "Tour-3.PNG", "Tour-4.PNG"],
+    features: [
+      "Real-time GPS tracking with LeafletJS",
+      "Location autocomplete for booking",
+      "Dynamic seat reservation and availability",
+      "Responsive front-end with ReactJS",
+    ],
   },
   {
     title: "Netflix Clone - Front-End Focused Portfolio",
@@ -36,6 +42,11 @@ const projects: Project[] = [
       "Metflix-3.png",
       "Metflix-4.png",
     ],
+    features: [
+      "Netflix-style UI and navigation",
+      "Responsive design with custom CSS",
+      "Django backend serving portfolio content",
+    ],
   },
   {
     title: "Inventory Management System (IMS)",
@@ -44,6 +55,12 @@ const projects: Project[] = [
       "A real-time inventory dashboard with low-stock alerts and visual insights via Chart.js.",
     technologies: ["Django", "JavaScript", "jQuery", "ChartJS"],
     images: ["IMS-1.png", "IMS-2.png", "IMS-3.PNG", "IMS-4.PNG"],
+    features: [
+      "Real-time inventory updates",
+      "Low-stock alerts",
+      "Data visualization with Chart.js",
+      "Admin-friendly dashboard",
+    ],
   },
   {
     title: "DepHelp - Depression Assessment Platform",
@@ -61,6 +78,12 @@ const projects: Project[] = [
       "Mongoose",
     ],
     images: ["Dephelp-1.png", "Dephelp-2.png", "Dephelp-3.png"],
+    features: [
+      "Google authentication with NextAuth",
+      "Dynamic questionnaire rendering",
+      "Real-time scoring system",
+      "Personalized results with data persistence",
+    ],
   },
   {
     title: "TourConnect - Cloud-Based Van Tour Booking System",
@@ -77,6 +100,12 @@ const projects: Project[] = [
       "Mongoose",
     ],
     images: ["TourConnect-1.png", "TourConnect-2.png", "TourConnect-3.png"],
+    features: [
+      "Real-time GPS tour tracking",
+      "Autocomplete for destinations",
+      "Seat reservation management",
+      "Interactive map integration",
+    ],
   },
   {
     title: "Entertainment & Logic Games Website",
@@ -96,6 +125,12 @@ const projects: Project[] = [
       "chessGame-3.png",
       "chessGame-4.png",
     ],
+    features: [
+      "Playable chess with React Chessboard",
+      "Rock-Paper-Scissors mini-game",
+      "Responsive UI with Tailwind CSS",
+      "TypeScript for type safety",
+    ],
   },
   {
     title: "BookKing - Booking Website Prototype",
@@ -103,13 +138,16 @@ const projects: Project[] = [
     introduction:
       "A booking website prototype built in React to practice Framer Motion animations, using a mock JSON database for data handling and dynamic UI interactions.",
     technologies: ["React", "Framer Motion", "JSON Server"],
-    images: [
-      "BookKing-1.png",
-      "BookKing-2.png",
-      "BookKing-3.png",
+    images: ["BookKing-1.png", "BookKing-2.png", "BookKing-3.png"],
+    features: [
+      "Framer Motion-powered animations",
+      "Mock booking data with JSON Server",
+      "Interactive and dynamic UI",
+      "Lightweight booking prototype",
     ],
   },
 ];
+
 export default function Projects() {
   const [paginated, setPaginated] = useState<Project[]>([]);
   const itemsPerPage = 3;
@@ -127,7 +165,7 @@ export default function Projects() {
     handlePagination(1);
   }, []);
   return (
-    <div className="w-full py-8 flex flex-col items-center gap-5 px-4">
+    <div className="w-full py-16 flex flex-col items-center gap-5 px-4">
       <p className="text-[25px] text-accent font-bold tracking-widest">
         Personal Projects
       </p>
@@ -137,7 +175,7 @@ export default function Projects() {
     grid-cols-1 
     sm:grid-cols-2
     lg:grid-cols-3
-    mx-auto justify-items-center"
+    mx-auto justify-items-center items-start"
       >
         {paginated.map((project, index) => (
           <ProjectCard key={index} project={project} />
