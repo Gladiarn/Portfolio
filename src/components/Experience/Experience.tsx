@@ -59,7 +59,9 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="w-full py-16 px-4 xl:px-[170px] flex items-center flex-col gap-3">
+    <div
+      className="w-full py-16 px-4 xl:px-[170px] flex items-center flex-col gap-3"
+    >
       <p className="text-[25px] text-accent font-bold tracking-widest mb-5">
         Experience
       </p>

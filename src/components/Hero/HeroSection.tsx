@@ -1,11 +1,21 @@
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
+
 export default function HeroSection() {
   return (
     <div className=" h-[600px] w-full px-4 md:px-[50px] xl:px-[100px] flex flex-col lg:flex-row justify-center lg:items-center lg:gap-32">
-      <div className="text-foreground order-1 text-center w-full lg:text-start lg:w-[600px]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="text-foreground order-1 text-center w-full lg:text-start lg:w-[600px]"
+      >
         <p className="font-medium leading-tight">Hello, I&apos;m</p>
         <p className="text-[32px] font-bold leading-tight">
           Ianne Carl Z. Bulilan
@@ -49,23 +59,30 @@ export default function HeroSection() {
             Contact Me
           </button>
         </div>
-      </div>
-      <div className="relative order-0 flex justify-center py-10">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="relative order-0 flex justify-center py-10"
+      >
         <div
           className={`rounded-full w-[150px] h-[150px] flex justify-center items-center overflow-hidden border-2 border-border shadow-[0_0_30px_rgba(255,255,255,0.05)]
  lg:w-[300px] lg:h-[300px]`}
-
         >
           <div className="relative w-full h-full">
-            {/* <Image
+            <Image
               src="/2x2.png"
               alt="picture"
               fill
               className="object-cover rounded-lg"
-            /> */}
+            />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { Moon, MoveUp, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   // const [bubbles, setBubbles] = useState<bubbleTypes[]>([]);
@@ -86,20 +87,73 @@ export default function Home() {
       )}
       <Background />
       <Navbar />
-      <section id="Home">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.05 }}
+        id="Home"
+      >
         <HeroSection />
-      </section>
+      </motion.section>
       <Carousel />
-      <About />
-      <section id="Experience">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.05 }}
+        id="Projects"
+      >
+        <About />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.05 }}
+        id="Experience"
+      >
         <Experience />
-      </section>
-      <section id="Projects">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.05 }}
+        id="Projects"
+      >
         <Projects />
-      </section>
-      <section id="Skills">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.05 }}
+        id="Skills"
+      >
         <Skills />
-      </section>
+      </motion.section>
       <Contact />
     </div>
   );
