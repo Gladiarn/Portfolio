@@ -6,10 +6,30 @@ const skillsContainer: SkillsTypes[] = [
   // Frontend
   {
     title: "JavaScript",
-    proficiency: 85,
+    proficiency: 88,
     total: 100,
     category: "Frontend",
     level: "Advanced",
+  },  {
+    title: "TypeScript",
+    proficiency: 80,
+    total: 100,
+    category: "Frontend",
+    level: "Intermediate",
+  },
+  {
+    title: "HTML",
+    proficiency: 92,
+    total: 100,
+    category: "Frontend",
+    level: "Expert",
+  },
+  {
+    title: "CSS",
+    proficiency: 92,
+    total: 100,
+    category: "Frontend",
+    level: "Expert",
   },
   {
     title: "React",
@@ -20,95 +40,122 @@ const skillsContainer: SkillsTypes[] = [
   },
   {
     title: "Next.js",
-    proficiency: 80,
+    proficiency: 85,
     total: 100,
     category: "Frontend",
     level: "Advanced",
   },
   {
-    title: "TypeScript",
-    proficiency: 75,
-    total: 100,
-    category: "Frontend",
-    level: "Intermediate",
-  },
-  {
-    title: "HTML",
-    proficiency: 90,
-    total: 100,
-    category: "Frontend",
-    level: "Expert",
-  },
-  {
-    title: "CSS",
-    proficiency: 90,
-    total: 100,
-    category: "Frontend",
-    level: "Expert",
-  },
-  {
     title: "Tailwind CSS",
-    proficiency: 90,
+    proficiency: 92,
     total: 100,
     category: "Frontend",
     level: "Expert",
-  },
+  },{
+  title: "Fetch API / Axios",
+  proficiency: 80,
+  total: 100,
+  category: "Frontend",
+  level: "Advanced",
+},
 
   // Backend
   {
     title: "Node.js",
-    proficiency: 75,
+    proficiency: 85,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },  {
+    title: "Django",
+    proficiency: 72,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },  {
+    title: "Laravel",
+    proficiency: 47,
+    total: 100,
+    category: "Backend",
+    level: "Beginner",
+  },  {
+    title: "Python",
+    proficiency: 72,
     total: 100,
     category: "Backend",
     level: "Intermediate",
   },
   {
     title: "REST APIs",
-    proficiency: 75,
-    total: 100,
-    category: "Backend",
-    level: "Intermediate",
-  },
-  {
-    title: "Django",
-    proficiency: 70,
-    total: 100,
-    category: "Backend",
-    level: "Intermediate",
-  },
-  {
-    title: "Laravel",
-    proficiency: 45, // lowered from 55
-    total: 100,
-    category: "Backend",
-    level: "Beginner",
-  },
-  {
-    title: "MongoDB",
-    proficiency: 70,
-    total: 100,
-    category: "Backend",
-    level: "Intermediate",
-  },
-  {
-    title: "Python",
-    proficiency: 70,
+    proficiency: 85,
     total: 100,
     category: "Backend",
     level: "Intermediate",
   },
 
+
+  {
+    title: "MongoDB",
+    proficiency: 75,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },
+
+  {
+    title: "Express.js",
+    proficiency: 80,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },
+  {
+    title: "Mongoose",
+    proficiency: 75,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  }, // Backend (Auth & Security)
+  {
+    title: "JWT Authentication",
+    proficiency: 70,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },
+  {
+    title: "NextAuth",
+    proficiency: 60,
+    total: 100,
+    category: "Backend",
+    level: "Beginner",
+  },
+  {
+    title: "Middleware",
+    proficiency: 75,
+    total: 100,
+    category: "Backend",
+    level: "Intermediate",
+  },
+  {
+    title: "Redis",
+    proficiency: 60,
+    total: 100,
+    category: "Backend",
+    level: "Beginner",
+  },
+
   // Design
   {
     title: "Figma",
-    proficiency: 75,
+    proficiency: 78,
     total: 100,
     category: "Design",
     level: "Intermediate",
   },
   {
     title: "UI/UX Design",
-    proficiency: 60,
+    proficiency: 65,
     total: 100,
     category: "Design",
     level: "Beginner",
@@ -117,17 +164,31 @@ const skillsContainer: SkillsTypes[] = [
   // Collaboration / Tools
   {
     title: "GitHub",
-    proficiency: 85,
+    proficiency: 88,
     total: 100,
     category: "Collaboration",
     level: "Advanced",
   },
   {
     title: "GitLab",
-    proficiency: 85,
+    proficiency: 87,
     total: 100,
     category: "Collaboration",
     level: "Advanced",
+  },
+  {
+    title: "Postman",
+    proficiency: 75,
+    total: 100,
+    category: "Collaboration",
+    level: "Intermediate",
+  },
+  {
+    title: "VS Code",
+    proficiency: 90,
+    total: 100,
+    category: "Collaboration",
+    level: "Expert",
   },
 ];
 
@@ -171,7 +232,9 @@ export default function Skills() {
               filterCategory(category);
             }}
             className={`transition-all ease-in-out duration-200 px-[10px] py-[5px] border border-accent text-accent rounded-full hover:bg-accent/20 ${
-              chosenCategory == category ? "bg-accent text-foregroundWithAccent" : ""
+              chosenCategory == category
+                ? "bg-accent text-foregroundWithAccent"
+                : ""
             }`}
             key={index}
           >
