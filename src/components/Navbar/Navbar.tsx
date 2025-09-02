@@ -1,25 +1,25 @@
 import { Copy, FileUser, Menu } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { navItemsTypes } from "../types";
 
 export default function Navbar() {
   const NavItems: navItemsTypes[] = [
     {
       title: "Home",
-      href: "#",
+      href: "#Home",
     },
     {
       title: "Experience",
       href: "#Experience",
     },
+
     {
+      title: "Projects",
+      href: "#Projects",
+    },    {
       title: "Skills",
       href: "#Skills",
-    },
-    {
-      title: "Contact",
-      href: "#Contact",
     },
   ];
 
@@ -36,13 +36,29 @@ export default function Navbar() {
     }
   };
 
+  const [activeSection, setActiveSection] = useState<string>("Home");
+    useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // section must be 60% visible
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
-      className="bg-card/20 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-lg fixed z-50"
-      style={{
-        boxShadow:
-          "inset 0 1px 2px rgba(255,255,255,0.1), 0 8px 20px rgba(0,0,0,0.05)",
-      }}
+      className="bg-background/10 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-sm fixed z-50"
+
     >
       <div className="flex gap-3 items-center">
         <i className="sm:text-[15px] text-[13px]">
@@ -71,24 +87,40 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex gap-5 text-foreground">
-        {NavItems.map((item, index) => (
-          <Link
-            key={index}
-            href={item.href}
-            className="relative inline-block overflow-hidden group font-medium text-[15px]"
-          >
-            <span className="inline-block pr-2 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-x-full">
-              {item.title}
-            </span>
+  {NavItems.map((item, index) => {
+    const isActive = activeSection === item.href.replace("#", "");
+    return (
+      <Link
+        key={index}
+        href={item.href}
+        className={`relative inline-block overflow-hidden group font-medium text-[15px]`}
+      >
+        {/* Default text */}
+        <span
+          className={`inline-block pr-2 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
+          ${isActive ? "-translate-x-full" : "group-hover:-translate-x-full"}`}
+        >
+          {item.title}
+        </span>
 
-            <span className="absolute left-0 top-0 pl-1 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] text-accent">
-              {item.title}
-            </span>
+        {/* Highlighted text (accent color) */}
+        <span
+          className={`absolute left-0 top-0 pl-1 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] text-accent
+          ${isActive ? "translate-x-0" : "translate-x-full group-hover:translate-x-0"}`}
+        >
+          {item.title}
+        </span>
 
-            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]"></span>
-          </Link>
-        ))}
-      </div>
+        {/* Underline */}
+        <span
+          className={`absolute bottom-0 left-0 w-full h-[2px] bg-accent transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
+          ${isActive ? "scale-x-100 origin-left" : "scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left"}`}
+        />
+      </Link>
+    );
+  })}
+</div>
+
 
       <div className="flex md:hidden ml-3">
         <Menu />

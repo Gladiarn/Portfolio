@@ -10,10 +10,14 @@ import {
 } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import GlassCard from "../GlassCard/GlassCard";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [dialogImage, setDialogImage] = useState<number>(0);
+
+  const [hovering, setHovering] = useState<boolean>(false);
+  const [activated, setActivated] = useState<boolean>(false);
 
   const changeImageSlide = (index: number): void => {
     if (index < 0) index = project.images.length - 1;
@@ -38,12 +42,14 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <GlassCard
-      className="flex flex-col w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px] border border-accent overflow-hidden p-[15px]
+      className="flex flex-col w-full sm:w-[295px] xl:w-[370px] 2xl:w-[460px] border border-accent overflow-hidden p-[15px] relative cursor-pointer
       "
+      onClick={() => setActivated(!activated)}
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
     >
       <Dialog>
         <div className="relative overflow-hidden aspect-[16/8] sm:h-[180px] xl:h-[210px] 2xl:h-[260px]">
-          {/* Trigger wraps only the image */}
           <DialogTrigger asChild>
             <div className="h-full w-full cursor-pointer">
               <div
@@ -57,7 +63,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                       alt=""
                       width={800}
                       height={400}
-                      className="object-cover object-top w-full h-full rounded-md"
+                      className="object-cover object-top w-full h-full rounded-md hover:scale-105 transition-transform duration-200"
                       onClick={() => setDialogImage(currentImage)}
                       style={{
                         boxShadow:
@@ -147,6 +153,35 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
           ))}
         </div>
+
+        <AnimatePresence>
+            {activated && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.1, ease: "easeInOut" }}
+                 className="text-[14px] text-secondary-foreground ml-3"
+              >
+
+                <ul className="list-disc space-y-1">
+                  {project.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
+      </div>
+
+      <div
+        className={`absolute bottom-0 left-1/2 -translate-x-1/2 text-nowrap ${
+          hovering ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-200 ease-in-out mt-2 text-center`}
+      >
+        <p className="text-secondary text-[12px]">
+          {activated ? "Click to collapse" : "Click to see contributions"}
+        </p>
       </div>
     </GlassCard>
   );
