@@ -52,7 +52,7 @@ const skillsContainer: SkillsTypes[] = [
     category: "Frontend",
     level: "Expert",
   },{
-  title: "Component Libraries",
+  title: "UI Libraries",
   proficiency: 75,
   total: 100,
   category: "Frontend",
