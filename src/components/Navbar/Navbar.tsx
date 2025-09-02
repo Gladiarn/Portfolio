@@ -2,6 +2,14 @@ import { Copy, FileUser, Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { navItemsTypes } from "../types";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Navbar() {
   const NavItems: navItemsTypes[] = [
@@ -17,7 +25,8 @@ export default function Navbar() {
     {
       title: "Projects",
       href: "#Projects",
-    },    {
+    },
+    {
       title: "Skills",
       href: "#Skills",
     },
@@ -37,7 +46,7 @@ export default function Navbar() {
   };
 
   const [activeSection, setActiveSection] = useState<string>("Home");
-    useEffect(() => {
+  useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
     const observer = new IntersectionObserver(
@@ -56,10 +65,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div
-      className="bg-background/10 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-sm fixed z-50"
-
-    >
+    <div className="bg-background/10 children-scroll w-full h-auto py-3 flex items-center text-foreground justify-between px-4 md:px-[50px] xl:px-[200px] overflow-x-auto backdrop-blur-sm fixed z-50">
       <div className="flex gap-3 items-center">
         <i className="sm:text-[15px] text-[13px]">
           bulilaniannecarl@<b className="text-accent">Gmail</b>.com
@@ -87,44 +93,81 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex gap-5 text-foreground">
-  {NavItems.map((item, index) => {
-    const isActive = activeSection === item.href.replace("#", "");
-    return (
-      <Link
-        key={index}
-        href={item.href}
-        className={`relative inline-block overflow-hidden group font-medium text-[15px]`}
-      >
-        {/* Default text */}
-        <span
-          className={`inline-block pr-2 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
+        {NavItems.map((item, index) => {
+          const isActive = activeSection === item.href.replace("#", "");
+          return (
+            <Link
+              key={index}
+              href={item.href}
+              className={`relative inline-block overflow-hidden group font-medium text-[15px]`}
+            >
+              {/* Default text */}
+              <span
+                className={`inline-block pr-2 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
           ${isActive ? "-translate-x-full" : "group-hover:-translate-x-full"}`}
-        >
-          {item.title}
-        </span>
+              >
+                {item.title}
+              </span>
 
-        {/* Highlighted text (accent color) */}
-        <span
-          className={`absolute left-0 top-0 pl-1 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] text-accent
-          ${isActive ? "translate-x-0" : "translate-x-full group-hover:translate-x-0"}`}
-        >
-          {item.title}
-        </span>
+              {/* Highlighted text (accent color) */}
+              <span
+                className={`absolute left-0 top-0 pl-1 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] text-accent
+          ${
+            isActive
+              ? "translate-x-0"
+              : "translate-x-full group-hover:translate-x-0"
+          }`}
+              >
+                {item.title}
+              </span>
 
-        {/* Underline */}
-        <span
-          className={`absolute bottom-0 left-0 w-full h-[2px] bg-accent transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
-          ${isActive ? "scale-x-100 origin-left" : "scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left"}`}
-        />
-      </Link>
-    );
-  })}
-</div>
-
-
-      <div className="flex md:hidden ml-3">
-        <Menu />
+              {/* Underline */}
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-accent transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]
+          ${
+            isActive
+              ? "scale-x-100 origin-left"
+              : "scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left"
+          }`}
+              />
+            </Link>
+          );
+        })}
       </div>
+
+      <Sheet>
+        <SheetTrigger>
+          <div className="flex md:hidden ml-3">
+            <Menu />
+          </div>
+        </SheetTrigger>
+
+        <SheetContent
+          side="right"
+          className="w-[250px] bg-background/50 backdrop-blur-md"
+        >
+          <SheetHeader>
+            <SheetTitle className="text-[20px] text-accent font-bold flex flex-start">
+              Navigation
+            </SheetTitle>
+            <SheetDescription className="sr-only">
+              Sidebar navigation links
+            </SheetDescription>
+          </SheetHeader>
+
+          <ul className="mt-4 space-y-2 text-foreground">
+            {NavItems.map((item, i) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+              <li key={i}>
+                <Link href={item.href} className={`hover:text-accent ${ isActive ? 'text-accent' : 'text-foreground'} transition-colors duration-200 ease-in-out`}>
+                  {item.title}
+                </Link>
+              </li>
+            )})}
+          </ul>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }
