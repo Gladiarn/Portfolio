@@ -110,7 +110,6 @@ export default function Home() {
           ease: "easeInOut",
         }}
         viewport={{ once: false, amount: 0.05 }}
-        id="Projects"
       >
         <About />
       </motion.section>
