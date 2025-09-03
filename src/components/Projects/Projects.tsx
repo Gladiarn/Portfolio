@@ -171,6 +171,7 @@ export default function Projects() {
       </p>
 
       <div
+            key={currentPage}
         className="grid gap-7 max-w-[1450px] w-fit
     grid-cols-1 
     sm:grid-cols-2
