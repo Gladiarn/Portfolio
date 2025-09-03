@@ -192,7 +192,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         } transition-opacity duration-200 ease-in-out mt-2 text-center`}
       >
         <p className="text-secondary text-[12px]">
-          {activated ? "Click to collapse" : "Click to see contributions"}
+          {activated ? "Click to collapse" : "Click to see features"}
         </p>
       </div>
     </GlassCard>
